@@ -3,8 +3,6 @@ cog_endpoint = 'https://license-plate-extraction.cognitiveservices.azure.com/'
 
 print('Ready to use cognitive services at {} using key {}'.format(cog_endpoint, cog_key))
 
-pip install azure-cognitiveservices-vision-computervision
-
 from azure.cognitiveservices.vision.computervision import ComputerVisionClient
 from azure.cognitiveservices.vision.computervision.models import OperationStatusCodes
 from msrest.authentication import CognitiveServicesCredentials
@@ -12,10 +10,11 @@ import matplotlib.pyplot as plt
 from PIL import Image
 import time
 import os
+
 # %matplotlib inline
 
 # Read the image file
-image_path = os.path.join('data', 'ocr', 'https://cdni.autocarindia.com/ExtraImages/20180402113123_NumberPlate_Swift.jpg')
+image_path = os.path.join('handwriting.png')
 image_stream = open(image_path, "rb")
 
 # Get a client for the computer vision service
