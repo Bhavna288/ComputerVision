@@ -14,7 +14,7 @@ import os
 # %matplotlib inline
 
 # Read the image file
-image_path = os.path.join('handwriting.png')
+image_path = os.path.join('letter_.jpg')
 image_stream = open(image_path, "rb")
 
 # Get a client for the computer vision service
