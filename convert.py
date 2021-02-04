@@ -1,6 +1,4 @@
-cog_key = 'aaafdfa6aeb249cbbaa52a601eca7a6f'
-cog_endpoint = 'https://license-plate-extraction.cognitiveservices.azure.com/'
-
+from azure_data import cog_endpoint, cog_key
 print('Ready to use cognitive services at {} using key {}'.format(cog_endpoint, cog_key))
 
 from azure.cognitiveservices.vision.computervision import ComputerVisionClient
