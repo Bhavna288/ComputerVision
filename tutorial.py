@@ -8,7 +8,7 @@ from matplotlib.figure import Figure
 app = Flask(__name__)
 app.secret_key = "army_bts"
 
-uploads_dir = os.path.join("uploads")
+uploads_dir = os.path.join("static", "uploads")
 app.config['UPLOAD_FOLDER'] = uploads_dir
 
 @app.route("/", methods=["POST", "GET"])
@@ -47,7 +47,7 @@ def extract():
 def result():
     if "res_str" in session and "uploaded_file" in session:
         res_str = session['res_str']
-        img_path = os.path.join(app.config['UPLOAD_FOLDER'], session['uploaded_file'])
+        img_path = session['uploaded_file']
         ress = {"str": res_str, "img": img_path}
         return render_template("result.html", results=ress)
     else:
@@ -56,7 +56,7 @@ def result():
 @app.route("/remove")
 def rmfile():
     if "uploaded_file" in session:
-        fname = os.path.join('uploads', session["uploaded_file"])
+        fname = os.path.join('static', 'uploads', session["uploaded_file"])
         if os.path.isfile(fname):
             os.remove(fname)
         return redirect(url_for("home"))

@@ -14,7 +14,7 @@ import os
 def extractText(file_name):
 
     # Read the image file
-    image_path = os.path.join('uploads', file_name)
+    image_path = os.path.join('static', 'uploads', file_name)
     image_stream = open(image_path, "rb")
     resultString = ""
 
@@ -44,7 +44,7 @@ def extractText(file_name):
 
 def extractFromHandwritten(file_name):
     # Read the image file
-    image_path = os.path.join('uploads', file_name)
+    image_path = os.path.join('static', 'uploads', file_name)
     image_stream = open(image_path, "rb")
     resultString = ""
 

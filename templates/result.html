@@ -3,7 +3,17 @@
     Extraction Results
 {% endblock %}
 {% block content %}
-    <pre>{{results['str']}}</pre>
-    <img src="{{results['img']}}">
-    <a href="{{url_for('rmfile')}}" class="finish">Finish</a>
+    <div class="content">
+        <div class="row">
+            <div class="col-lg-6 col-sm-12">
+                <img src="{{url_for('static', filename='uploads/' + results['img'])}}">
+            </div>
+            <div class="col-lg-6 col-sm-12">
+                <pre>{{results['str']}}</pre>
+            </div>
+            <div class="col-xl-12 mt-5">
+                <a href="{{url_for('rmfile')}}" class="finish">Finish</a>
+            </div>
+        </div>
+    </div>
 {% endblock %}

@@ -1,3 +1,7 @@
+.content {
+    text-align: center;
+}
+
 .form {
     display: block;
     text-align: center;
@@ -5,6 +9,12 @@
 
 .form label {
     width: 100%;
+}
+
+img {
+    object-fit: contain;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 form {
@@ -33,7 +43,24 @@ input[type="file"] {
     color: white;
     background-color: turquoise;
     text-decoration: none;
+    border-radius: 5px;
 }
+
+.finish:hover {
+    color: white;
+}
+
+.flex-container {
+    display: flex;
+}
+
+.flex-child {
+    flex: 1;
+}  
+
+.flex-child:first-child {
+    margin-right: 20px;
+} 
 
 .submitBtn {
     border: none;
