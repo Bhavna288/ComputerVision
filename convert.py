@@ -11,11 +11,12 @@ import os
 
 # %matplotlib inline
 
-def extractText():
+def extractText(file_name):
 
     # Read the image file
-    image_path = os.path.join('numberplate.jpg')
+    image_path = os.path.join('uploads', file_name)
     image_stream = open(image_path, "rb")
+    resultString = ""
 
     # Get a client for the computer vision service
     computervision_client = ComputerVisionClient(cog_endpoint, CognitiveServicesCredentials(cog_key))
@@ -36,6 +37,7 @@ def extractText():
     if read_results.status == OperationStatusCodes.succeeded:
         for result in read_results.analyze_result.read_results:
             for line in result.lines:
+                resultString += line.text + "\n"
                 print(line.text)
 
     # Open image and display it.
@@ -44,3 +46,4 @@ def extractText():
     img = Image.open(image_path)
     plt.axis('off')
     plt.imshow(img)
+    return resultString
