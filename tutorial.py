@@ -2,6 +2,8 @@ import os
 from flask import Flask, redirect, url_for, render_template, request, session
 from convert import extractText
 from werkzeug.utils import secure_filename
+from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
+from matplotlib.figure import Figure
 
 app = Flask(__name__)
 app.secret_key = "army_bts"
@@ -20,15 +22,19 @@ def home():
 
 @app.route("/result")
 def result():
-    res_str = request.args['resStr']
-    return render_template("result.html", result_string=res_str)
+    if "res_str" in session:
+        res_str = session['res_str']
+        return render_template("result.html", result_string=res_str)
+    else:
+        return render_template("index.html")
 
 @app.route("/extract")
 def extract():
     if "uploaded_file" in session:
         res = extractText(session["uploaded_file"])
         if res:
-            return redirect(url_for("result", resStr=res))
+            session["res_str"] = res
+            return redirect(url_for("result"))
         else:
             return redirect(url_for("home"))
     else:

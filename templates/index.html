@@ -4,7 +4,10 @@
 {% endblock %}
 {% block content %}
     <form action="" method="POST" enctype="multipart/form-data">
-        <input type="file" name="file">
+        <label class="custom-file-upload">
+            <input type="file" name="file" />
+            Upload file
+        </label>
         <input type="submit" name="submit" value="Submit">
     </form>
 {% endblock %}
