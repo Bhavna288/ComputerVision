@@ -9,6 +9,7 @@ app = Flask(__name__)
 app.secret_key = "army_bts"
 
 uploads_dir = os.path.join("uploads")
+app.config['UPLOAD_FOLDER'] = uploads_dir
 
 @app.route("/", methods=["POST", "GET"])
 def home():
@@ -44,9 +45,11 @@ def extract():
 
 @app.route("/result")
 def result():
-    if "res_str" in session:
+    if "res_str" in session and "uploaded_file" in session:
         res_str = session['res_str']
-        return render_template("result.html", result_string=res_str)
+        img_path = os.path.join(app.config['UPLOAD_FOLDER'], session['uploaded_file'])
+        ress = {"str": res_str, "img": img_path}
+        return render_template("result.html", results=ress)
     else:
         return render_template("index.html")
 
