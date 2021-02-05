@@ -3,11 +3,17 @@
     Home page
 {% endblock %}
 {% block content %}
-    <form action="" method="POST" enctype="multipart/form-data">
-        <label class="custom-file-upload">
-            <input type="file" name="file" />
-            Upload file
-        </label>
-        <input type="submit" name="submit" value="Submit">
-    </form>
+    <div class="form">
+        <form action="" method="POST" enctype="multipart/form-data">
+            <label class="custom-file-upload">
+                <input type="file" name="file" required/>
+                Upload file
+            </label>
+            <label class="file-type">
+                <input type="radio" name="f-type" value="handwritten" required/>Handwritten
+                <input type="radio" name="f-type" value="printed" />Printed
+            </label>
+            <input type="submit" class="bts btn-primary" name="submit" value="Submit">
+        </form>
+    </div>
 {% endblock %}
