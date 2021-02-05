@@ -3,5 +3,6 @@
     Extraction Results
 {% endblock %}
 {% block content %}
-    {{result_string}}
+    <pre>{{result_string}}</pre>
+    <a href="{{url_for('rmfile')}}" class="finish">Finish</a>
 {% endblock %}

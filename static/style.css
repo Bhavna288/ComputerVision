@@ -25,3 +25,11 @@ input {
     padding: 6px 12px;
     cursor: pointer;
 }
+
+.finish {
+    margin: 10px auto;
+    padding: 10px;
+    color: white;
+    background-color: turquoise;
+    text-decoration: none;
+}

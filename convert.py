@@ -37,12 +37,12 @@ def extractText(file_name):
     if read_results.status == OperationStatusCodes.succeeded:
         for result in read_results.analyze_result.read_results:
             for line in result.lines:
-                resultString += line.text
+                resultString += line.text + "\n"
                 print(line.text)
 
     return resultString
 
-def extractFromHandwritten(filename):
+def extractFromHandwritten(file_name):
     # Read the image file
     image_path = os.path.join('uploads', file_name)
     image_stream = open(image_path, "rb")
@@ -67,7 +67,7 @@ def extractFromHandwritten(filename):
     if read_results.status == OperationStatusCodes.succeeded:
         for result in read_results.analyze_result.read_results:
             for line in result.lines:
-                resultString += line.text
+                resultString += line.text + "\n"
                 print(line.text)
     
     return resultString
