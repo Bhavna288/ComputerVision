@@ -5,25 +5,21 @@
 {% block content %}
     <div class="form">
         <form action="" method="POST" enctype="multipart/form-data">
-            <ul class="inp-list">
-                <li>
-                    <label for="file">
-                        <input type="file" name="file" id="file" required/>
-                        <div class="custom-file-upload">Upload file</div>
-                    </label>
-                </li>
-                <li>
-                    <label for="handwritten">
-                        <input type="radio" name="f-type" id="handwritten" value="handwritten" required/>Handwritten<br/>
-                    </label>
-                </li>
-                <li>
-                    <label for="printed">
-                        <input type="radio" name="f-type" value="printed" id="printed" />Printed
-                    </label>
-                </li>
-            </ul>
-            <input type="submit" class="submitBtn" name="submit" value="Submit">
+            <label for="file">
+                <input type="file" name="file" id="file" required/>
+                <div class="custom-file-upload">Upload file</div>
+            </label>
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label for="handwritten" class="btn btn-outline-primary active">
+                    <input type="radio" name="f-type" id="handwritten" value="handwritten" required/>Handwritten<br/>
+                </label>
+                <label for="printed" class="btn btn-outline-primary">
+                    <input type="radio" name="f-type" value="printed" id="printed" />Printed
+                </label>
+            </div>
+            <label for="submit">
+                <input type="submit" class="submitBtn" name="submit" id="submit" value="Submit">
+            </label>
         </form>
     </div>
 {% endblock %}
