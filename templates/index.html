@@ -5,14 +5,24 @@
 {% block content %}
     <div class="form">
         <form action="" method="POST" enctype="multipart/form-data">
-            <label>
-                <input type="file" name="file" required/>
-                <div class="custom-file-upload">Upload file</div>
-            </label>
-            <label class="file-type">
-                <input type="radio" name="f-type" value="handwritten" required/>Handwritten<br/>
-                <input type="radio" name="f-type" value="printed" />Printed
-            </label>
+            <ul class="inp-list">
+                <li>
+                    <label for="file">
+                        <input type="file" name="file" id="file" required/>
+                        <div class="custom-file-upload">Upload file</div>
+                    </label>
+                </li>
+                <li>
+                    <label for="handwritten">
+                        <input type="radio" name="f-type" id="handwritten" value="handwritten" required/>Handwritten<br/>
+                    </label>
+                </li>
+                <li>
+                    <label for="printed">
+                        <input type="radio" name="f-type" value="printed" id="printed" />Printed
+                    </label>
+                </li>
+            </ul>
             <input type="submit" class="submitBtn" name="submit" value="Submit">
         </form>
     </div>

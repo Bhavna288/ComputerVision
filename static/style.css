@@ -7,14 +7,41 @@
     text-align: center;
 }
 
-.form label {
-    width: 100%;
-}
-
 img {
     object-fit: contain;
     max-width: 100%;
     max-height: 100%;
+}
+
+input[name="f-type"] {
+    display:none
+}
+.inp-list {
+    list-style-type:none;
+    margin:25px 0 0 0;
+    padding:0;
+}
+.inp-list li {
+    float:left;
+    margin:0 5px 0 0;
+    width: 100%;
+}
+.inp-list label {
+    padding:5px;
+    cursor:pointer;
+    -webkit-appearance: button;
+    /* WebKit */
+    -moz-appearance: button;
+    /* Mozilla */
+    -o-appearance: button;
+    /* Opera */
+    -ms-appearance: button;
+    /* Internet Explorer */
+    appearance: button;
+    /* CSS3 */
+}
+.inp-list input[type="radio"]:hover {
+    background:#DDD;
 }
 
 form {
@@ -60,7 +87,7 @@ input[type="file"] {
 
 .flex-child:first-child {
     margin-right: 20px;
-} 
+}
 
 .submitBtn {
     border: none;
